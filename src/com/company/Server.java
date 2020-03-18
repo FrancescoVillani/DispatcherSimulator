@@ -14,6 +14,8 @@ public class Server {
     private Queue<Pair<Double,Double>> queue = new LinkedList<>();
     /*defined as packets per second*/
     private Function<Double, Double> serviceRate;
+    /*time relative to the server activity*/
+    private double packetEnd = 0.0;
 
     /*the constructor takes a lambda with an Uniform(0,1) as input and returns a value from a known distribution, if the
     * service rate needs to be constant the function should always return the same value.*/
@@ -38,5 +40,10 @@ public class Server {
     }
     public void removeHead(){
         queue.remove();
+    }
+
+    /* uses the server singularly, returns the time it took to process the packet */
+    public double esegui(Pair<Double,Double> packet){
+        return 0;
     }
 }
